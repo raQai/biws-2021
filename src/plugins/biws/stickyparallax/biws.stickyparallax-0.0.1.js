@@ -45,8 +45,6 @@
                 array.splice(index, 1);
             }
         },
-            getMiddleValue = (a, b, c) =>
-                a + b + c - Math.min(a, b, c) - Math.max(a, b, c),
             getElementHeight = (element) => {
                 const computedStyle = getComputedStyle(element);
 
