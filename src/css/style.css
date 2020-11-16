@@ -12,10 +12,10 @@
 
 @font-face {
     font-family: 'Raleway';
-    font-weight: 300;
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: local('Raleway'), url('../fonts/Raleway-Light.ttf') format('truetype');
+    src: local('Raleway'), url('../fonts/Raleway-Regular.ttf') format('truetype');
 }
 
 * {
@@ -36,7 +36,7 @@ html {
     color: #fff;
     font-size: 18px;
     font-family: 'Raleway', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     text-shadow: 0 1px rgba(0, 0, 0, .9);
 }
 
@@ -44,14 +44,30 @@ html::before {
     content: '';
     position: fixed;
     top: 0;
-    height:100%;
+    height: 100%;
     left: 0;
-    width:100%;
+    width: 100%;
     background-color: #112222;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23112121' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23112020' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23101f1f' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23101e1e' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23101d1d' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
     background-size: cover;
     z-index: -10;
     will-change: scroll-position;
+}
+
+header {
+    position: fixed;
+    will-change: scroll-position;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(17, 26, 27, .9);
+}
+
+.logo {
+    margin: 1rem 0;
+    border-left: 3px solid white;
+    padding-left: .4rem;
 }
 
 .darkbg {
@@ -61,7 +77,6 @@ html::before {
 .cliptop, .clipbottom {
     position: relative;
     overflow: visible;
-    z-index: -1;
 }
 
 .cliptop::before {
@@ -92,46 +107,53 @@ html::before {
 }
 
 .start {
-    padding: 5rem 0;
+    padding: 7rem 0;
 }
 
 /*
  * Typography
  */
 
-h1, h2, h3, h4, h5, .title, .subtitle, .bullet {
+.logo, h1, h2, h3, h4 .title, .subtitle, .bullet {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
     text-transform: uppercase;
-    margin-top: 1em;
 }
 
-.title, .subtitle {
-    margin-top: 0;
+.business, .slogan, .title, .subtitle {
+    display: block;
 }
 
 a, a:visited {
     color: #fff;
 }
 
-p {
+p, li, .slogan, .subtitle {
     line-height: 1.5;
 }
 
-ul {
+ul.icons {
     list-style: none;
 }
 
-.title, .subtitle, .bullet {
-    font-size: 2em;
-    letter-spacing: .15em;
+.logo, .title, .subtitle, .bullet {
+    letter-spacing: .1em;
+}
+
+.title {
+    font-size: 2rem;
 }
 
 .subtitle, .bullet {
-    font-size: 1.1em;
+    font-size: 1.1rem;
+}
+
+.slogan {
+    font-size: .56rem;
 }
 
 .content {
+    color: rgba(255, 255, 255, .9);
     margin: 1.5em 0;
 }
 
@@ -139,7 +161,7 @@ ul {
  * Animations
  */
 
-.animate.title, .animate.subtitle {
+h1.animate, .animate.title, .animate.subtitle {
     -webkit-animation: animatetitle 3s ease-in;
     animation: animatetitle 3s ease-in;
 }
@@ -168,24 +190,3 @@ ul {
     width: 2.2rem;
     height: 2.2rem;
 }
-
-/*
- * Reduced motion
- */
-
-@media (prefers-reduced-motion) {
-    .animate {
-        -webkit-animation-duration: 0s !important;
-        animation-duration: 0s !important;
-        -webkit-animation-delay: 0s !important;
-        animation-delay: 0s !important;
-    }
-    .hover a::after {
-        -webkit-transition-duration: 0s !important;
-        transition-duration: 0s !important;
-        -webkit-transition-delay: 0s !important;
-        transition-delay: 0s !important;
-    }
-}
-
-/*todo media query for bullets -> "verantwortungsbewusst" very long...*/

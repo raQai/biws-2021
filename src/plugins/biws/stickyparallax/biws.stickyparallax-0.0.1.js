@@ -110,8 +110,7 @@
                 const wrapper = document.createElement('div');
                 wrapper.classList.add(className);
                 wrapper.append(...element.children);
-
-                element.replaceChildren(wrapper);
+                element.append(wrapper);
             },
             unwrapContent = (element, className) => {
                 if (!isElement(element)) {
@@ -123,7 +122,10 @@
                     return;
                 }
 
-                element.replaceChildren(...element.firstElementChild.children);
+                const wrapper = element.firstElementChild;
+                const children = wrapper.children;
+                element.removeChild(wrapper);
+                element.append(...children);
             },
             calculateOpacity = (offset) => {
                 const abs = Math.abs(offset);

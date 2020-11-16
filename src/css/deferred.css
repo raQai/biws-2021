@@ -1,3 +1,5 @@
+/*TODO animate with JS*/
+
 @keyframes animatetitle {
     0% {
         opacity: 0;
@@ -29,8 +31,9 @@
 footer {
     font-size: .8em;
     padding-bottom: 2rem;
-    overflow:hidden;
-    clip-path: polygon(0 7vw, 100% 0, 100% 100%, 0% 100%);;
+    overflow: hidden;
+    clip-path: polygon(0 7vw, 100% 0, 100% 100%, 0% 100%);
+    ;
 }
 
 .clipbottom::after {
@@ -59,7 +62,7 @@ footer {
 
 .footer {
     align-items: flex-end;
-    padding-top:7vw;
+    padding-top: 7vw;
 }
 
 .footer>* {
@@ -79,9 +82,38 @@ footer {
     margin: 4rem 0;
 }
 
+ul.list {
+    padding-inline-start: 40px;
+}
+
+.item {
+    margin: .8rem 0;
+}
+
+/*
+ * Typography
+ */
+
+h3, h4 {
+    margin: .7em 0 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 /*
  * Icons
  */
+
+.offerjob .icon {
+    opacity: .7;
+    transition: opacity .4s ease-in;
+}
+
+.offerjob .icons a {
+    display: block;
+}
 
 .footer .icon {
     margin: 0 .4rem;
@@ -95,7 +127,7 @@ footer {
     display: block;
 }
 
-.footer .icons a:hover .icon, .footer .icons a:focus .icon {
+.offerjob a:hover .icon, .offerjob a:focus .icon, .footer a:hover .icon, .footer a:focus .icon {
     opacity: 1;
 }
 
@@ -113,16 +145,13 @@ footer {
     min-height: 200vw;
     border-radius: 50%;
     pointer-events: none;
-    -webkit-transform: translate(calc(-50% - 1.25rem), calc(-50% + .85rem)) scale(0);
     transform: translate(calc(-50% - 1.25rem), calc(-50% + .85rem)) scale(0);
-    -webkit-transition: -webkit-transform .4s ease-in;
     transition: transform .4s ease-in;
     backface-visibility: hidden;
     will-change: transform;
 }
 
 .hover a:focus::after, .hover a:hover::after {
-    -webkit-transform: translate(calc(-50% - 1.25rem), calc(-50% + .85rem)) scale(1);
     transform: translate(calc(-50% - 1.25rem), calc(-50% + .85rem)) scale(1);
     z-index: -7;
 }
@@ -145,4 +174,23 @@ footer {
 
 .linkedin a::after {
     background: #0073b1;
+}
+
+/*
+ * Reduced motion
+ */
+
+@media (prefers-reduced-motion) {
+    .animate {
+        -webkit-animation-duration: 0s !important;
+        animation-duration: 0s !important;
+        -webkit-animation-delay: 0s !important;
+        animation-delay: 0s !important;
+    }
+    .hover a::after {
+        -webkit-transition-duration: 0s !important;
+        transition-duration: 0s !important;
+        -webkit-transition-delay: 0s !important;
+        transition-delay: 0s !important;
+    }
 }

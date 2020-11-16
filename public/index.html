@@ -12,7 +12,7 @@
     <link rel="alternate icon" href="favicon.ico">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#112222">
     <link rel="preload" as="font" type="font/ttf" href="assets/fonts/Lato-Black.ttf" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/ttf" href="assets/fonts/Raleway-Light.ttf" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/ttf" href="assets/fonts/Raleway-Regular.ttf" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="preload" href="assets/css/deferred.min.css" as="style">
     <noscript>
@@ -31,62 +31,89 @@
 </head>
 
 <body>
+    <header>
+        <div class="container flex">
+            <div class="logo">
+                <span class="business">
+                    Bogdan IWS
+                </span>
+                <span class="slogan">
+                    IT & Web solutions
+                </span>
+            </div>
+        </div>
+    </header>
     <main>
         <div class="container">
+            <a id="start" href="#" aria-label="Zum Seitenanfang"></a>
             <article class="start full flex">
                 <section class="about">
-                    <h1 class="animate title">Bogdan IWS</h1>
-                    <p class="animate subtitle">IT & Web Solutions</p>
-                    <p class="animate content">I am an independent software and web developer and I like to pay my rent.
+                    <h1 class="animate">
+                        <span class="title">Software und Webseiten</span>
+                        <span class="subtitle">zugeschnitten auf Ihre Anforderungen</span>
+                    </h1>
+                    <p class="animate content">
+                        Individuelle Beratung und Umsetzung für performante und Nutzerfreundliche Software- und
+                        Weblösungen.
                     </p>
                 </section>
                 <section class="experience group1">
                     <ul class="icons">
                         <li class="java">
-                            <img width="40" height="40" class="animate icon" src="assets/img/java.svg" alt="java" loading="lazy">
+                            <img width="40" height="40" class="animate icon" src="assets/img/java.svg" alt="Java Icon"
+                                loading="lazy">
                         </li>
                         <li class="php">
-                            <img width="40" height="40" class="animate icon" src="assets/img/php.svg" alt="php" loading="lazy">
+                            <img width="40" height="40" class="animate icon" src="assets/img/php.svg" alt="PHP Icon"
+                                loading="lazy">
                         </li>
                         <li class="wordpress">
-                            <img width="40" height="40" class="animate icon" src="assets/img/wordpress.svg" alt="wordpress" loading="lazy">
+                            <img width="40" height="40" class="animate icon" src="assets/img/wordpress.svg"
+                                alt="WordPress Icon" loading="lazy">
                         </li>
                         <li class="python">
-                            <img width="40" height="40" class="animate icon" src="assets/img/python.svg" alt="python" loading="lazy">
+                            <img width="40" height="40" class="animate icon" src="assets/img/python.svg"
+                                alt="Python Icon" loading="lazy">
                         </li>
                         <li class="django">
-                            <img width="40" height="40" class="animate icon" src="assets/img/django.svg" alt="django" loading="lazy">
+                            <img width="40" height="40" class="animate icon" src="assets/img/django.svg"
+                                alt="Django Icon" loading="lazy">
                         </li>
                     </ul>
                 </section>
                 <section class="experience group2">
                     <ul class="icons">
                         <li class="html">
-                            <img width="40" height="40" class="animate icon" src="assets/img/html5.svg" alt="html5" loading="lazy">
+                            <img width="40" height="40" class="animate icon" src="assets/img/html5.svg" alt="HTML5 Icon"
+                                loading="lazy">
                         </li>
                         <li class="css">
-                            <img width="40" height="40" class="animate icon" src="assets/img/css3.svg" alt="css3" loading="lazy">
+                            <img width="40" height="40" class="animate icon" src="assets/img/css3.svg" alt="CSS3 Icon"
+                                loading="lazy">
                         </li>
                         <li class="javascript">
                             <img width="40" height="40" class="animate icon" src="assets/img/javascript.svg"
-                                alt="javascript" loading="lazy">
+                                alt="JavaScript Icon" loading="lazy">
                         </li>
                         <li class="typescript">
                             <img width="40" height="40" class="animate icon" src="assets/img/typescript.svg"
-                                alt="typescript" loading="lazy">
+                                alt="TypeScript Icon" loading="lazy">
                         </li>
                     </ul>
                 </section>
                 <section class="experience group3">
                     <ul class="icons">
                         <li class="jquery">
-                            <img width="40" height="40" class="animate icon" src="assets/img/jquery.svg" alt="jquery" loading="lazy">
+                            <img width="40" height="40" class="animate icon" src="assets/img/jquery.svg"
+                                alt="jQuery Icon" loading="lazy">
                         </li>
                         <li class="vue">
-                            <img width="40" height="40" class="animate icon" src="assets/img/vue.svg" alt="vue" loading="lazy">
+                            <img width="40" height="40" class="animate icon" src="assets/img/vue.svg" alt="Vue.js Icon"
+                                loading="lazy">
                         </li>
                         <li class="svelte">
-                            <img width="40" height="40" class="animate icon" src="assets/img/svelte.svg" alt="svelte" loading="lazy">
+                            <img width="40" height="40" class="animate icon" src="assets/img/svelte.svg"
+                                alt="Svelte Icon" loading="lazy">
                         </li>
                     </ul>
                 </section>
@@ -94,42 +121,118 @@
         </div>
         <div class="darkbg cliptop clipbottom">
             <div class="bullets container">
-                <p class="bullet">Selbständig & Verantwortungsbewusst</p>
-                <p class="bullet">Teamfähig & Kommunikativ</p>
-                <p class="bullet">Motiviert & Leistungsbereit</p>
+                <p class="bullet">Ich bin teamfähig & kommunikativ</p>
+                <p class="bullet">immer motiviert & leistungsbereit</p>
+                <p class="bullet">und meine Hunde sind witzig.</p>
             </div>
         </div>
-        <div class="pages container">
+        <div class="container">
+            <a id="aboutme" href="#aboutme" aria-label="Mehr über Patrick Bogdan"></a>
             <article class="page">
                 <section>
-                    <h2 class="title">Patrick Bogdan</h2>
-                    <p class="subtitle">Über mich</p>
-                    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et consequatur
-                        eum
-                        distinctio voluptatibus aliquid quod voluptatum. Quisquam aspernatur amet placeat saepe,
-                        qui
-                        voluptates culpa porro!</p>
+                    <h2 class="title">Hi, ich bin Patrick</h2>
+                    <p class="subtitle">Selbstständig & Berufserfahren</p>
+                    <p class="content">
+                        Ich bin seit 2009 als selbstständiger <b>Software- und Webentwickler</b> tätig und biete
+                        umfassende Lösungen für Applikationen auf Basis von gängigen und modernen Technologien.
+                    </p>
+                    <p class="content">
+                        Zu meinen Kompetenzen zählen ein sicherer Umgang mit Front- und Backend-Technologien, sowie
+                        Erfahrungen in den Bereichen <b>Responsive Design</b>, <b>Suchmaschinenoptimierung</b>,
+                        <b>Websicherheit</b> und Hundeerziehung.
+                    </p>
+                    <p class="content">
+                        Ich bilde mich stetig weiter, arbeite gerne in Teams und helfe bei Fragen und Problemen.
+                    </p>
                 </section>
             </article>
-            <article class="page">
+        </div>
+        <div class="darkbg cliptop clipbottom">
+            <div class="bullets container">
+                <p class="bullet">Individuelle Beratung für maßgenschneiderte Lösungen</p>
+                <p class="bullet">Full-stack Development alleine oder in agilen Teams</p>
+                <p class="bullet">Neue Technilogien für moderne Resultate</p>
+            </div>
+        </div>
+        <div class="container">
+            <a id="offerjob" href="#offerjob" aria-label="Mehr über gemeinsame Projektrealisierungen"></a>
+            <article class="page offerjob">
                 <section>
                     <h2 class="title">Gemeinsam Projekte realisieren</h2>
-                    <p class="subtitle">Entwickler gesucht?</p>
-                    <!-- <p class="content">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem voluptatem vitae in ducimus
-                        dolores dolorem quia? Vero, nihil. Doloribus, illum, laudantium atque alias quaerat adipisci
-                        praesentium rem voluptatibus dolorum labore sunt facere laboriosam minus ipsam soluta
-                        dignissimos, libero nobis minima dolores quae reiciendis impedit quasi. Deserunt commodi totam
-                        doloribus ipsa.
-                    </p> -->
-                    <!-- <p class="content">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque aut beatae dolore incidunt
-                        maiores totam voluptates quos expedita. Hic quae odit excepturi doloremque provident sunt
-                        corrupti laborum nostrum fugit accusantium eligendi impedit qui, tenetur aliquam!
-                    </p> -->
-                    <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quia deleniti
-                        natus sunt omnis fuga eos temporibus earum nostrum vitae dolorem minus laudantium nulla aliquam.
+                    <p class="subtitle">Suchen Sie einen Entwickler?</p>
+                    <p class="content">
+                        Ich plane, entwerfe und entwickle in enger Zusammenarbeit mit Ihnen.
                     </p>
+                    <p class="content">
+                        Technologien mit denen ich nicht vertraut bin, eigne ich mir gerne für Ihre Projekte an.
+                    </p>
+                    <p class="content">
+                        Als Basis für <b>Webseiten</b> setze ich meistens auf
+                        <a href="https://wordpress.org/">WordPress</a> in Kombination mit eigens entwickelten Plugins.
+                        Diese lassen sich individuell und nach Ihren Wünschen anpassen um Ihre Projekte so zu
+                        realisieren, wie Sie es sich vorstellen.
+                    </p>
+                    <p class="content">
+                        In einem agilen Team habe ich jahrelange Erfahrung mit <b>Java</b> sammeln können. Ich freue
+                        mich über neue Herausforderungen und arbeite mich schnell in neue Umgebungen ein.
+                        <br>
+                        Auch das Betriebssystem spielt dabei keine Rolle.
+                    </p>
+                    <p class="content">
+                        Sie suchen einen Entwickler:
+                    </p>
+                    <ul class="list">
+                        <li class="item">
+                            für Ihre persönliche <b>Webseite oder Softwarelösung</b>?
+                        </li>
+                        <li class="item">
+                            für Ihr Team in Festanstellung oder als Freelancer?
+                        </li>
+                        <li class="item">
+                            interessiert und motivierten mit <b>Berufserfahrung</b>?
+                        </li>
+                    </ul>
+                    <p class="content">
+                        Sie bieten dafür:
+                    </p>
+                    <ul class="list">
+                        <li class="item">
+                            ein außreichendes Angebot zur persönlichen Weiterbildung
+                        </li>
+                        <li class="item">
+                            eine hundefreundliche Arbeitsumgebung oder
+                        </li>
+                        <li class="item">
+                            die Möglichkeit auf Arbeit im Homeoffice
+                        </li>
+                        <li class="item">
+                            ein freundliches Arbeitsklima
+                        </li>
+                    </ul>
+                    <p class="content contactme">
+                        Kontaktieren Sie mich:
+                    </p>
+                    <ul class="icons">
+                        <li class="email">
+                            <a href="mailto:patrick.bgdn@gmail.com"
+                                aria-label="E-Mail kontakt via patrick.bgdn@gmail.com">
+                                <img width="40" height="40" class="icon" src="assets/img/email.svg" alt="E-Mail Icon"
+                                    loading="lazy">
+                            </a>
+                        </li>
+                        <li class="github">
+                            <a href="https://github.com/raQai" aria-label="GitHub-Profil aufrufen">
+                                <img width="40" height="40" class="icon" src="assets/img/github.svg" alt="GitHub Icon"
+                                    loading="lazy">
+                            </a>
+                        </li>
+                        <li class="xing">
+                            <a href="https://www.xing.com/profile/Patrick_Bogdan" aria-label="Xing-Profil aufrufen">
+                                <img width="40" height="40" class="icon" src="assets/img/xing.svg" alt="Xing Icon"
+                                    loading="lazy">
+                            </a>
+                        </li>
+                    </ul>
                 </section>
             </article>
         </div>
@@ -140,13 +243,15 @@
                 <p class="email">patrick.bgdn@gmail.com</p>
                 <ul class="icons">
                     <li class="hover github">
-                        <a href="https://github.com/raQai">
-                            <img width="31" height="31" class="icon" src="assets/img/github.svg" alt="github" loading="lazy">
+                        <a href="https://github.com/raQai" aria-label="GitHub-Profil aufrufen">
+                            <img width="31" height="31" class="icon" src="assets/img/github.svg" alt="GitHub Icon"
+                                loading="lazy">
                         </a>
                     </li>
                     <li class="hover xing">
-                        <a href="https://www.xing.com/profile/Patrick_Bogdan">
-                            <img width="31" height="31" class="icon" src="assets/img/xing.svg" alt="xing" loading="lazy">
+                        <a href="https://www.xing.com/profile/Patrick_Bogdan" aria-label="Xing-Profil aufrufen">
+                            <img width="31" height="31" class="icon" src="assets/img/xing.svg" alt="Xing Icon"
+                                loading="lazy">
                         </a>
                     </li>
                 </ul>
@@ -155,7 +260,8 @@
                     <span class="copyright">&copy; 2020 Bogdan IWS</span>
                 </p>
             </div>
-            <div id="imprint" class="imprint">
+            <div class="imprint">
+                <a id="imprint" href="#imprint" aria-label="Impressum der Webseite"></a>
                 <h2>Impressum - Angaben gemäß §5 TMG</h2>
 
                 <h3>Inhaltlich Verantwortlich gemäß § 55 Abs. 1 RStV</h3>
