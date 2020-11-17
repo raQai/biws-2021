@@ -15,4 +15,3 @@ jobs:
         password: ${{ secrets.goneo_ftp_pwd }}
         local-dir: public/
         server-dir: htdocs/biws/
-        dry-run: true
