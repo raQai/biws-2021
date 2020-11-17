@@ -1,0 +1,18 @@
+on: push
+name: Deploy website on push
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@master
+      with:
+        server: ${{ secrets.goneo_ftp_srv }}
+        username: ${{ secrets.goneo_ftp_usr }}
+        password: ${{ secrets.goneo_ftp_pwd }}
+        local-dir: public/
+        server-dir: htdocs/biws/
+        dry-run: true
