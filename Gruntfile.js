@@ -30,17 +30,18 @@ module.exports = grunt => {
             }
         },
         uglify: {
-            target: {
-                options: {
-                    sourceMap: true
-                },
-                files: {
-                    'public/assets/js/index.min.js': 'build/js/index.js',
-                    'public/assets/js/biws.stickyparallax.min.js': 'build/js/biws.stickyparallax.js'
-                }
+            options: {
+                sourceMap: true
+            },
+            files: {
+                'public/assets/js/index.min.js': 'build/js/index.js',
+                'public/assets/js/biws.stickyparallax.min.js': 'build/js/biws.stickyparallax.js'
             }
         },
         watch: {
+            options: {
+                livereload: true
+            },
             styles: {
                 files: [
                     'src/css/style.css',
@@ -61,6 +62,19 @@ module.exports = grunt => {
                 options: {
                     debounceDelay: 250,
                 }
+            },
+        },
+        connect: {
+            options: {
+                port: 9000,
+                hostname: '0.0.0.0',
+                base: 'public/',
+                livereload: true,
+            },
+            livereload: {
+                options: {
+                    open: true
+                }
             }
         }
     });
@@ -69,5 +83,7 @@ module.exports = grunt => {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.registerTask('default', ['babel', 'uglify', 'autoprefixer', 'cssmin']);
+    grunt.registerTask('serve', ['connect:livereload', 'watch']);
 }
