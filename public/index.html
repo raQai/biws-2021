@@ -20,12 +20,33 @@
     </noscript>
     <script type="application/ld+json" crossorigin="anonymous">
         {
-            "@context" : "http://schema.org",
-            "@type": "ProfessionalService",
-            "name" : "Bogdan IWS",
-            "url": "http://bogdan-iws.de/",
-            "sameAs" : [ "https://github.com/raQai",
-                "https://www.xing.com/profile/Patrick_Bogdan"]
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Bogdan IWS",
+            "image": "https://bogdan-iws.de/favicon.svg",
+            "@id": "https://bogdan-iws.de",
+            "url": "https://bogdan-iws.de",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Darmstadt",
+                "addressCountry": "DE"
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday"
+                    ],
+                "opens": "10:00",
+                "closes": "17:00"
+            },
+            "sameAs" : [
+                    "https://github.com/raQai",
+                    "https://www.xing.com/profile/Patrick_Bogdan"
+                ]
         }
     </script>
 </head>
@@ -164,9 +185,6 @@
                         Ich plane, entwerfe und entwickle in enger Zusammenarbeit mit Ihnen.
                     </p>
                     <p class="content">
-                        Technologien mit denen ich nicht vertraut bin, eigne ich mir gerne für Ihre Projekte an.
-                    </p>
-                    <p class="content">
                         Als Basis für <b>Webseiten</b> setze ich meistens auf
                         <a href="https://wordpress.org/">WordPress</a> in Kombination mit eigens entwickelten Plugins.
                         Diese lassen sich individuell und nach Ihren Wünschen anpassen um Ihre Projekte so zu
@@ -175,8 +193,9 @@
                     <p class="content">
                         In einem agilen Team habe ich jahrelange Erfahrung mit <b>Java</b> sammeln können. Ich freue
                         mich über neue Herausforderungen und arbeite mich schnell in neue Umgebungen ein.
-                        <br>
-                        Auch das Betriebssystem spielt dabei keine Rolle.
+                    </p>
+                    <p class="content">
+                        Technologien mit denen ich nicht vertraut bin, eigne ich mir gerne für Ihre Projekte an.
                     </p>
                     <p class="content">
                         Sie suchen einen Entwickler:
@@ -209,28 +228,23 @@
                             ein freundliches Arbeitsklima
                         </li>
                     </ul>
+                    <a id="contact" href="#contact" aria-label="Patrick Bogdan kontaktieren"></a>
                     <p class="content contactme">
-                        Kontaktieren Sie mich:
+                        Dann kontaktieren Sie mich einfach
                     </p>
-                    <ul class="icons">
-                        <li class="email">
-                            <a href="mailto:patrick.bgdn@gmail.com"
-                                aria-label="E-Mail kontakt via patrick.bgdn@gmail.com">
-                                <img width="40" height="40" class="icon" src="assets/img/email.svg" alt="E-Mail Icon"
-                                    loading="lazy">
-                            </a>
+                    <p class="content">
+                        Sie erreichen mich Montag bis Freitag von 10.00 bis 17.00 Uhr
+                    </p>
+                    <ul class="contact">
+                        <li class="item">
+                            <img width="31" height="31" class="icon" src="assets/img/email.svg" alt="E-Mail Icon"
+                                loading="lazy">
+                            <span class="EoauyE yEcNoT link">nadgob</span>
                         </li>
-                        <li class="github">
-                            <a href="https://github.com/raQai" aria-label="GitHub-Profil aufrufen">
-                                <img width="40" height="40" class="icon" src="assets/img/github.svg" alt="GitHub Icon"
-                                    loading="lazy">
-                            </a>
-                        </li>
-                        <li class="xing">
-                            <a href="https://www.xing.com/profile/Patrick_Bogdan" aria-label="Xing-Profil aufrufen">
-                                <img width="40" height="40" class="icon" src="assets/img/xing.svg" alt="Xing Icon"
-                                    loading="lazy">
-                            </a>
+                        <li class="item">
+                            <img width="31" height="31" class="icon" src="assets/img/phone.svg" alt="Phone Icon"
+                                loading="lazy">
+                            <span class="PyHCah yEcNoT link">&nbsp;189&nbsp;-&nbsp;</span>
                         </li>
                     </ul>
                 </section>
@@ -240,16 +254,22 @@
     <footer class="darkbg">
         <div class="container">
             <div class="footer flex">
-                <p class="email">patrick.bgdn@gmail.com</p>
+                <p>
+                    <span class="EoauyE yEcNoT">nadgob</span>
+                </p>
+                <p>
+                    <span class="PyHCah yEcNoT">&nbsp;189&nbsp;-&nbsp;</span>
+                </p>
                 <ul class="icons">
                     <li class="hover github">
-                        <a href="https://github.com/raQai" aria-label="GitHub-Profil aufrufen">
+                        <a href="https://github.com/raQai" aria-label="GitHub-Profil aufrufen" rel="noopener">
                             <img width="31" height="31" class="icon" src="assets/img/github.svg" alt="GitHub Icon"
                                 loading="lazy">
                         </a>
                     </li>
                     <li class="hover xing">
-                        <a href="https://www.xing.com/profile/Patrick_Bogdan" aria-label="Xing-Profil aufrufen">
+                        <a href="https://www.xing.com/profile/Patrick_Bogdan" aria-label="Xing-Profil aufrufen"
+                            rel="noopener">
                             <img width="31" height="31" class="icon" src="assets/img/xing.svg" alt="Xing Icon"
                                 loading="lazy">
                         </a>
@@ -267,8 +287,9 @@
                 <h3>Inhaltlich Verantwortlich gemäß § 55 Abs. 1 RStV</h3>
                 <p>Patrick Bogdan</p>
                 <p>Dieburger Str. 73<br>D-64287 Darmstadt</p>
-                <p>E-Mail: patrick.bgdn@gmail.com</p>
-                <p>USt.-Id.Nr: DE292101855</p>
+                <p>E-Mail: <span class="EoauyE yEcNoT">nadgob</span></p>
+                <p>Telefon: <span class="PyHCah yEcNoT">&nbsp;189&nbsp;-&nbsp;</span></p>
+                <p>USt.-Id.Nr.: DE292101855</p>
 
                 <h3>Disclaimer – rechtliche Hinweise</h3>
 
@@ -362,7 +383,6 @@
             </div>
         </div>
     </footer>
-    <!-- use public/js/...? -->
     <script src="assets/js/biws.stickyparallax.min.js" defer></script>
     <script src="assets/js/index.min.js" defer></script>
 </body>
