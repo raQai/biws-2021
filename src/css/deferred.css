@@ -84,14 +84,6 @@ footer {
     align-items: center;
 }
 
-.contact a {
-    text-decoration: none;
-}
-
-.contact a:hover {
-    text-decoration: underline;
-}
-
 /*
  * Typography
  */
