@@ -154,6 +154,10 @@ a, a:visited {
     color: #fff;
 }
 
+.logo a {
+    text-decoration: none;
+}
+
 p, li, .slogan, .subtitle {
     line-height: 1.5;
 }
