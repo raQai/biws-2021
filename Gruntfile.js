@@ -30,12 +30,14 @@ module.exports = grunt => {
             }
         },
         uglify: {
-            options: {
-                sourceMap: true
-            },
-            files: {
-                'public/assets/js/index.min.js': 'build/js/index.js',
-                'public/assets/js/biws.stickyparallax.min.js': 'build/js/biws.stickyparallax.js'
+            target: {
+                options: {
+                    sourceMap: true
+                },
+                files: {
+                    'public/assets/js/index.min.js': 'build/js/index.js',
+                    'public/assets/js/biws.stickyparallax.min.js': 'build/js/biws.stickyparallax.js'
+                }
             }
         },
         watch: {
@@ -63,6 +65,9 @@ module.exports = grunt => {
                     debounceDelay: 250,
                 }
             },
+            html: {
+                files: ['**/*.html']
+            }
         },
         connect: {
             options: {
