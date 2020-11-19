@@ -4,7 +4,7 @@ module.exports = grunt => {
             main: {
                 files: [
                     { cwd: 'root/', src: '**/*', dest: 'dist/' },
-                    { cwd: 'resources/', src: '**/*', dest: 'dist/assets/' }
+                    { cwd: 'resources/', src: '**/*', dest: 'dist/resources/' }
                 ],
                 failOnError: true,
                 compareUsing: "md5",
@@ -22,8 +22,8 @@ module.exports = grunt => {
         cssmin: {
             dist: {
                 files: {
-                    'dist/assets/css/critical.min.css': 'build/css/critical.css',
-                    'dist/assets/css/style.min.css': ['build/css/style.css', 'build/css/biws.stickyparallax.css'],
+                    'dist/resources/css/critical.min.css': 'build/css/critical.css',
+                    'dist/resources/css/style.min.css': ['build/css/style.css', 'build/css/biws.stickyparallax.css'],
                 }
             }
         },
@@ -45,8 +45,8 @@ module.exports = grunt => {
                     sourceMap: true
                 },
                 files: {
-                    'dist/assets/js/index.min.js': 'build/js/index.js',
-                    'dist/assets/js/biws.stickyparallax.min.js': 'build/js/biws.stickyparallax.js'
+                    'dist/resources/js/index.min.js': 'build/js/index.js',
+                    'dist/resources/js/biws.stickyparallax.min.js': 'build/js/biws.stickyparallax.js'
                 }
             }
         },
