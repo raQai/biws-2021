@@ -49,6 +49,11 @@ footer {
     padding-left: .5rem;
 }
 
+.list {
+    padding-inline-start: 20px;
+    color: rgba(255, 255, 255, .9);
+}
+
 .imprint {
     font-size: .9em;
     opacity: .5;
@@ -56,9 +61,8 @@ footer {
     margin: 4rem 0;
 }
 
-.list {
-    padding-inline-start: 20px;
-    color: rgba(255, 255, 255, .9);
+.imprint .list {
+    color: #fff;
 }
 
 .contact {
