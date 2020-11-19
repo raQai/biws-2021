@@ -7,11 +7,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - name: Setup Node and build
+    - name: Setup Node
       uses: actions/setup-node@v2-beta
       with:
         node-version: '12'
         check-latest: true
+    - name: Build project
       run: |
         npm install
         npm run build
