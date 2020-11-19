@@ -33,7 +33,7 @@
     font-weight: 900;
     font-style: normal;
     font-display: swap;
-    src: local('Lato'), url('../fonts/Lato-Black.ttf') format('truetype');
+    src: local('Lato'), url('assets/fonts/Lato-Black.ttf') format('truetype');
 }
 
 @font-face {
@@ -41,7 +41,7 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: local('Raleway'), url('../fonts/Raleway-Regular.ttf') format('truetype');
+    src: local('Raleway'), url('assets/fonts/Raleway-Regular.ttf') format('truetype');
 }
 
 * {

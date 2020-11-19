@@ -30,7 +30,7 @@ module.exports = grunt => {
             }
         },
         uglify: {
-            target: {
+            dist: {
                 options: {
                     sourceMap: true
                 },
@@ -40,9 +40,21 @@ module.exports = grunt => {
                 }
             }
         },
+        htmlmin: {
+            dist: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {
+                    'build/html/index.min.html': 'src/html/index.html'
+                }
+            }
+
+        },
         inline: {
             dist: {
-                src: 'src/html/index.html',
+                src: 'build/html/index.min.html',
                 dest: 'public/index.html'
             }
         },
@@ -72,7 +84,17 @@ module.exports = grunt => {
                 }
             },
             html: {
-                files: ['src/html/index.html']
+                files: ['src/html/index.html', 'src/css/critical.css'],
+                tasks: ['autoprefixer', 'cssmin', 'htmlmin', 'inline'],
+                options: {
+                    debounceDelay: 250,
+                }
+            },
+            livereload: {
+                options: {
+                    livereload: true,
+                },
+                files: ['public/index.html']
             }
         },
         connect: {
@@ -93,9 +115,10 @@ module.exports = grunt => {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-inline');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.registerTask('default', ['babel', 'uglify', 'autoprefixer', 'cssmin', 'inline']);
+    grunt.registerTask('default', ['babel', 'uglify', 'autoprefixer', 'cssmin', 'htmlmin', 'inline']);
     grunt.registerTask('serve', ['connect:livereload', 'watch']);
 }
