@@ -6,7 +6,7 @@
   "scripts": {
     "build": "grunt",
     "dev": "grunt && grunt serve",
-    "clean": "rm -rf node_modules package-lock.json",
+    "clean": "rm -rf node_modules package-lock.json build dist",
     "reinstall": "npm run clean && npm install"
   },
   "keywords": [],
