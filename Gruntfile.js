@@ -47,16 +47,10 @@ module.exports = grunt => {
                     collapseWhitespace: true
                 },
                 files: {
-                    'build/html/index.min.html': 'src/html/index.html'
+                    'public/index.html': 'src/html/index.html'
                 }
             }
 
-        },
-        inline: {
-            dist: {
-                src: 'build/html/index.min.html',
-                dest: 'public/index.html'
-            }
         },
         watch: {
             options: {
@@ -84,8 +78,8 @@ module.exports = grunt => {
                 }
             },
             html: {
-                files: ['src/html/index.html', 'src/css/critical.css'],
-                tasks: ['autoprefixer', 'cssmin', 'htmlmin', 'inline'],
+                files: ['src/html/index.html'],
+                tasks: ['htmlmin'],
                 options: {
                     debounceDelay: 250,
                 }
@@ -116,9 +110,9 @@ module.exports = grunt => {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
-    grunt.loadNpmTasks('grunt-inline');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.registerTask('default', ['babel', 'uglify', 'autoprefixer', 'cssmin', 'htmlmin', 'inline']);
+
+    grunt.registerTask('default', ['babel', 'uglify', 'autoprefixer', 'cssmin', 'htmlmin']);
     grunt.registerTask('serve', ['connect:livereload', 'watch']);
 }
