@@ -1,5 +1,15 @@
 module.exports = grunt => {
     grunt.initConfig({
+        sync: {
+            main: {
+                files: [
+                    { cwd: 'root/', src: '**/*', dest: 'public/' },
+                    { cwd: 'resources/', src: '**/*', dest: 'public/assets/' }
+                ],
+                failOnError: true,
+                compareUsing: "md5",
+            },
+        },
         autoprefixer: {
             dist: {
                 files: {
@@ -84,12 +94,21 @@ module.exports = grunt => {
                     debounceDelay: 250,
                 }
             },
-            livereload: {
-                options: {
-                    livereload: true,
-                },
-                files: ['public/index.html']
-            }
+            syncfiles: {
+                files: ['resources/**', 'root/**'],
+                tasks: ['sync']
+            },
+            /*
+             * necessary if updating inline styles
+             */
+            // livereload: {
+            //     options: {
+            //         livereload: true,
+            //     },
+            //     files: ['public/index.html'],
+            //     // run all necessary tasks (css and html related)
+            //     tasks: [*]
+            // }
         },
         connect: {
             options: {
@@ -105,6 +124,8 @@ module.exports = grunt => {
             }
         }
     });
+
+    grunt.loadNpmTasks('grunt-sync');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-autoprefixer');
@@ -113,6 +134,6 @@ module.exports = grunt => {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
 
-    grunt.registerTask('default', ['babel', 'uglify', 'autoprefixer', 'cssmin', 'htmlmin']);
+    grunt.registerTask('default', ['sync', 'babel', 'uglify', 'autoprefixer', 'cssmin', 'htmlmin']);
     grunt.registerTask('serve', ['connect:livereload', 'watch']);
 }
