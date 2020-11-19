@@ -23,4 +23,4 @@ jobs:
         username: ${{ secrets.goneo_ftp_usr }}
         password: ${{ secrets.goneo_ftp_pwd }}
         local-dir: dist/
-        server-dir: htdocs/biws/staging
+        server-dir: htdocs/biws/staging/
