@@ -4,7 +4,7 @@ module.exports = grunt => {
             dist: {
                 files: {
                     'build/css/critical.css': 'src/css/critical.css',
-                    'build/css/deferred.css': 'src/css/deferred.css',
+                    'build/css/style.css': 'src/css/style.css',
                     'build/css/biws.stickyparallax.css': 'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.1.css',
                 }
             }
@@ -13,7 +13,7 @@ module.exports = grunt => {
             dist: {
                 files: {
                     'public/assets/css/critical.min.css': 'build/css/critical.css',
-                    'public/assets/css/deferred.min.css': ['build/css/deferred.css', 'build/css/biws.stickyparallax.css'],
+                    'public/assets/css/style.min.css': ['build/css/style.css', 'build/css/biws.stickyparallax.css'],
                 }
             }
         },
@@ -47,7 +47,7 @@ module.exports = grunt => {
             styles: {
                 files: [
                     'src/css/critical.css',
-                    'src/css/deferred.css',
+                    'src/css/style.css',
                     'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.1.css'
                 ],
                 tasks: ['autoprefixer', 'cssmin'],
