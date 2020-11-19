@@ -40,6 +40,12 @@ module.exports = grunt => {
                 }
             }
         },
+        inline: {
+            dist: {
+                src: 'src/html/index.html',
+                dest: 'public/index.html'
+            }
+        },
         watch: {
             options: {
                 livereload: true
@@ -66,7 +72,7 @@ module.exports = grunt => {
                 }
             },
             html: {
-                files: ['**/*.html']
+                files: ['src/html/index.html']
             }
         },
         connect: {
@@ -87,8 +93,9 @@ module.exports = grunt => {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-inline');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.registerTask('default', ['babel', 'uglify', 'autoprefixer', 'cssmin']);
+    grunt.registerTask('default', ['babel', 'uglify', 'autoprefixer', 'cssmin', 'inline']);
     grunt.registerTask('serve', ['connect:livereload', 'watch']);
 }
