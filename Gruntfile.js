@@ -3,8 +3,8 @@ module.exports = grunt => {
         sync: {
             main: {
                 files: [
-                    { cwd: 'root/', src: '**/*', dest: 'dist/' },
-                    { cwd: 'resources/', src: '**/*', dest: 'dist/resources/' }
+                    { cwd: 'root/', src: '*', dest: 'dist/', dot: true },
+                    { cwd: 'resources/', src: '*', dest: 'dist/resources/' }
                 ],
                 failOnError: true,
                 compareUsing: "md5",
