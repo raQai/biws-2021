@@ -3,8 +3,8 @@ module.exports = grunt => {
         sync: {
             main: {
                 files: [
-                    { cwd: 'root/', src: '**/*', dest: 'public/' },
-                    { cwd: 'resources/', src: '**/*', dest: 'public/assets/' }
+                    { cwd: 'root/', src: '**/*', dest: 'dist/' },
+                    { cwd: 'resources/', src: '**/*', dest: 'dist/assets/' }
                 ],
                 failOnError: true,
                 compareUsing: "md5",
@@ -22,8 +22,8 @@ module.exports = grunt => {
         cssmin: {
             dist: {
                 files: {
-                    'public/assets/css/critical.min.css': 'build/css/critical.css',
-                    'public/assets/css/style.min.css': ['build/css/style.css', 'build/css/biws.stickyparallax.css'],
+                    'dist/assets/css/critical.min.css': 'build/css/critical.css',
+                    'dist/assets/css/style.min.css': ['build/css/style.css', 'build/css/biws.stickyparallax.css'],
                 }
             }
         },
@@ -45,8 +45,8 @@ module.exports = grunt => {
                     sourceMap: true
                 },
                 files: {
-                    'public/assets/js/index.min.js': 'build/js/index.js',
-                    'public/assets/js/biws.stickyparallax.min.js': 'build/js/biws.stickyparallax.js'
+                    'dist/assets/js/index.min.js': 'build/js/index.js',
+                    'dist/assets/js/biws.stickyparallax.min.js': 'build/js/biws.stickyparallax.js'
                 }
             }
         },
@@ -57,7 +57,7 @@ module.exports = grunt => {
                     collapseWhitespace: true
                 },
                 files: {
-                    'public/index.html': 'src/html/index.html'
+                    'dist/index.html': 'src/html/index.html'
                 }
             }
 
@@ -105,7 +105,7 @@ module.exports = grunt => {
             //     options: {
             //         livereload: true,
             //     },
-            //     files: ['public/index.html'],
+            //     files: ['dist/index.html'],
             //     // run all necessary tasks (css and html related)
             //     tasks: [*]
             // }
@@ -114,7 +114,7 @@ module.exports = grunt => {
             options: {
                 port: 9000,
                 hostname: '0.0.0.0',
-                base: 'public/',
+                base: 'dist/',
                 livereload: true,
             },
             livereload: {

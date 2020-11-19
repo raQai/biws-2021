@@ -13,5 +13,5 @@ jobs:
         server: ${{ secrets.goneo_ftp_srv }}
         username: ${{ secrets.goneo_ftp_usr }}
         password: ${{ secrets.goneo_ftp_pwd }}
-        local-dir: public/
+        local-dir: dist/
         server-dir: htdocs/biws/
