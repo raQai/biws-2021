@@ -63,10 +63,19 @@ module.exports = grunt => {
                     collapseWhitespace: true
                 },
                 files: {
-                    'build/html/index.html': 'src/html/index.html'
+                    'build/html/index.html': 'src/html/index.html',
+                    'dist/404.html': 'src/html/404.html'
+                }
+            },
+            404: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {
+                    'dist/404.html': 'src/html/404.html'
                 }
             }
-
         },
         'string-replace': {
             inline: {
@@ -113,8 +122,18 @@ module.exports = grunt => {
                 }
             },
             html: {
-                files: ['src/html/index.html', 'src/css/critical.css'],
+                files: [
+                    'src/html/index.html',
+                    'src/css/critical.css'
+                ],
                 tasks: ['htmlmin', 'string-replace'],
+                options: {
+                    debounceDelay: 250,
+                }
+            },
+            404: {
+                files: ['src/html/404.html'],
+                tasks: ['htmlmin'],
                 options: {
                     debounceDelay: 250,
                 }

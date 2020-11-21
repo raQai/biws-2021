@@ -4,6 +4,8 @@ Header set X-XSS-Protection "1; mode=block"
 Header set X-Content-Type-Options "nosniff"
 Header set Referrer-Policy "no-referrer, strict-origin-when-cross-origin"
 
+ErrorDocument 404 /404.html
+
 <ifModule mod_gzip.c>
     mod_gzip_on Yes
     mod_gzip_dechunk Yes
