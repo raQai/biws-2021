@@ -137,7 +137,6 @@ a:hover {
     transform: translate(calc(-50% - 1.25rem), calc(-50% + .85rem)) scale(0);
     transition: transform .4s ease-in;
     backface-visibility: hidden;
-    will-change: transform;
 }
 
 .hover a:focus::after, .hover a:hover::after {
