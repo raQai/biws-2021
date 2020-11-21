@@ -34,7 +34,7 @@
     font-style: normal;
     font-display: swap;
     unicode-range: U+000-5FF;
-    src: local('Lato'), url('../fonts/Lato-Black.ttf') format('truetype');
+    src: local('Lato'), url('resources/fonts/Lato-Black.ttf') format('truetype');
 }
 
 @font-face {
@@ -43,7 +43,7 @@
     font-style: normal;
     font-display: swap;
     unicode-range: U+000-5FF;
-    src: local('Raleway'), url('../fonts/Raleway-Regular.ttf') format('truetype');
+    src: local('Raleway'), url('resources/fonts/Raleway-Regular.ttf') format('truetype');
 }
 
 * {

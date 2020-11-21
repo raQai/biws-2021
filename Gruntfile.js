@@ -22,7 +22,7 @@ module.exports = grunt => {
         cssmin: {
             dist: {
                 files: {
-                    'dist/resources/css/critical.min.css': 'build/css/critical.css',
+                    'build/css/critical.min.css': 'build/css/critical.css',
                     'dist/resources/css/style.min.css': ['build/css/style.css', 'build/css/biws.stickyparallax.css'],
                 }
             }
@@ -50,6 +50,8 @@ module.exports = grunt => {
                 }
             }
         },
+        // get critical css file
+        // <link[\.\/\s\w\d='"]*href=['"]([\/\.\s\d\w]*critical[\/\.\s\d\w]*)['"][\.\/\s\w\d='"]*>
         htmlmin: {
             dist: {
                 options: {
@@ -57,10 +59,29 @@ module.exports = grunt => {
                     collapseWhitespace: true
                 },
                 files: {
-                    'dist/index.html': 'src/html/index.html'
+                    'build/html/index.html': 'src/html/index.html'
                 }
             }
 
+        },
+        'string-replace': {
+            inline: {
+                options: {
+                    replacements: [
+                        {
+                            // not working therefore not adding critical to the html and adding before end of head
+                            // pattern: /<link[\.\/\s\w\d='"]*href=['"]([\/\.\s\d\w]*critical[\/\.\s\d\w]*)['"][\.\/\s\w\d='"]*>/ig,
+                            // cannot get capture group $1. check how to do this.
+                            // replacement: '<style><%= grunt.file.read("$1") %></style>'
+                            pattern: '</head>',
+                            replacement: '<style><%= grunt.file.read("build/css/critical.min.css") %></style></head>'
+                        }
+                    ]
+                },
+                files: {
+                    'dist/index.html': 'build/html/index.html'
+                }
+            }
         },
         watch: {
             options: {
@@ -88,8 +109,8 @@ module.exports = grunt => {
                 }
             },
             html: {
-                files: ['src/html/index.html'],
-                tasks: ['htmlmin'],
+                files: ['src/html/index.html', 'src/css/critical.css'],
+                tasks: ['htmlmin', 'string-replace'],
                 options: {
                     debounceDelay: 250,
                 }
@@ -98,17 +119,12 @@ module.exports = grunt => {
                 files: ['resources/**', 'root/**'],
                 tasks: ['sync']
             },
-            /*
-             * necessary if updating inline styles
-             */
-            // livereload: {
-            //     options: {
-            //         livereload: true,
-            //     },
-            //     files: ['dist/index.html'],
-            //     // run all necessary tasks (css and html related)
-            //     tasks: [*]
-            // }
+            livereload: {
+                options: {
+                    livereload: true,
+                },
+                files: ['dist/index.html'],
+            }
         },
         connect: {
             options: {
@@ -131,9 +147,11 @@ module.exports = grunt => {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-string-replace');
+
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
 
-    grunt.registerTask('default', ['sync', 'babel', 'uglify', 'autoprefixer', 'cssmin', 'htmlmin']);
+    grunt.registerTask('default', ['sync', 'babel', 'uglify', 'autoprefixer', 'cssmin', 'htmlmin', 'string-replace']);
     grunt.registerTask('serve', ['connect:livereload', 'watch']);
 }
