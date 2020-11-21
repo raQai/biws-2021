@@ -23,7 +23,11 @@ module.exports = grunt => {
             dist: {
                 files: {
                     'build/css/critical.min.css': 'build/css/critical.css',
-                    'dist/resources/css/style.min.css': ['build/css/style.css', 'build/css/biws.stickyparallax.css'],
+                    'dist/resources/css/style.min.css': [
+                        'build/css/critical.css',
+                        'build/css/style.css',
+                        'build/css/biws.stickyparallax.css'
+                    ],
                 }
             }
         },
