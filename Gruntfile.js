@@ -12,10 +12,7 @@ module.exports = grunt => {
         },
         postcss: {
             options: {
-                map: {
-                    inline: false,
-                    annotation: 'dist/resources/css/'
-                },
+                map: false,
                 processors: [
                     require('pixrem')({}),
                     require('autoprefixer')({}),
@@ -25,17 +22,24 @@ module.exports = grunt => {
             dist: {
                 files: {
                     'build/css/critical.min.css': 'src/css/critical.css',
+                    'build/css/style.min.css': 'src/css/style.css',
+                    'build/css/biws.stickyparallax.min.css': 'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.css',
+                }
+            }
+        },
+        cssmin: {
+            combine: {
+                files: {
                     'dist/resources/css/style.min.css': [
-                        'src/css/critical.css',
-                        'src/css/style.css',
-                        'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.css'
-                    ]
+                        'build/css/critical.min.css',
+                        'build/css/style.min.css',
+                        'build/css/biws.stickyparallax.min.css'
+                    ],
                 }
             }
         },
         babel: {
             options: {
-                sourceMap: true,
                 presets: ['@babel/preset-env']
             },
             dist: {
@@ -47,12 +51,11 @@ module.exports = grunt => {
         },
         uglify: {
             dist: {
-                options: {
-                    sourceMap: true
-                },
                 files: {
-                    'dist/resources/js/index.min.js': 'build/js/index.js',
-                    'dist/resources/js/biws.stickyparallax.min.js': 'build/js/biws.stickyparallax.js'
+                    'dist/resources/js/index.min.js': [
+                        'build/js/biws.stickyparallax.js',
+                        'build/js/index.js'
+                    ]
                 }
             }
         },
@@ -108,7 +111,7 @@ module.exports = grunt => {
                     'src/css/style.css',
                     'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.css'
                 ],
-                tasks: ['postcss'],
+                tasks: ['postcss', 'cssmin'],
                 options: {
                     debounceDelay: 250,
                 }
@@ -167,16 +170,24 @@ module.exports = grunt => {
     });
 
     grunt.loadNpmTasks('grunt-sync');
-    grunt.loadNpmTasks('grunt-babel');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('@lodder/grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-babel');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-string-replace');
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
 
-    grunt.registerTask('default', ['sync', 'babel', 'uglify', 'postcss', 'htmlmin', 'string-replace']);
+    grunt.registerTask('default', [
+        'sync',
+        'babel',
+        'uglify',
+        'postcss',
+        'cssmin',
+        'htmlmin',
+        'string-replace'
+    ]);
     grunt.registerTask('serve', ['connect:livereload', 'watch']);
 }
