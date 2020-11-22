@@ -1,11 +1,40 @@
-Header set Content-Security-Policy "default-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; object-src 'none'; script-src 'self'; connect-src 'self'; require-trusted-types-for 'script'"
-Header set X-Frame-Options "DENY"
-Header set X-XSS-Protection "1; mode=block"
-Header set X-Content-Type-Options "nosniff"
-Header set Referrer-Policy "no-referrer, strict-origin-when-cross-origin"
-
 ErrorDocument 404 /404.html
 
+## HEADERS ##
+<ifModule mod_headers.c>
+    Header set Content-Security-Policy "default-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; object-src 'none'; script-src 'self'; connect-src 'self'; require-trusted-types-for 'script'"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "no-referrer, strict-origin-when-cross-origin"
+
+    ## CACHE CONTROL ##
+    <filesMatch ".(ico|svg|ttf)$">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </filesMatch>
+
+    <filesMatch ".(css|js)$">
+        Header set Cache-Control "max-age=86400, public"
+    </filesMatch>
+    ## CACHE CONTROL ##
+</ifModule>
+## HEADERS
+
+## EXPIRES CACHING ##
+<ifModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/svg-xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresDefault "access plus 1 month"
+</ifModule>
+## EXPIRES CACHING ##
+
+## COMPRESSION ##
 <ifModule mod_gzip.c>
     mod_gzip_on Yes
     mod_gzip_dechunk Yes
@@ -15,7 +44,4 @@ ErrorDocument 404 /404.html
     mod_gzip_item_exclude mime ^image/.*
     mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
 </ifModule>
-
-<filesMatch ".(ico|svg|ttf)$">
-    Header set Cache-Control "max-age=31536000, public, immutable"
-</filesMatch>
+## COMPRESSION ##
