@@ -10,24 +10,26 @@ module.exports = grunt => {
                 compareUsing: "md5",
             },
         },
-        autoprefixer: {
+        postcss: {
+            options: {
+                map: {
+                    inline: false,
+                    annotation: 'dist/resources/css/'
+                },
+                processors: [
+                    require('pixrem')({}),
+                    require('autoprefixer')({}),
+                    require('cssnano')({})
+                ]
+            },
             dist: {
                 files: {
-                    'build/css/critical.css': 'src/css/critical.css',
-                    'build/css/style.css': 'src/css/style.css',
-                    'build/css/biws.stickyparallax.css': 'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.css',
-                }
-            }
-        },
-        cssmin: {
-            dist: {
-                files: {
-                    'build/css/critical.min.css': 'build/css/critical.css',
+                    'build/css/critical.min.css': 'src/css/critical.css',
                     'dist/resources/css/style.min.css': [
-                        'build/css/critical.css',
-                        'build/css/style.css',
-                        'build/css/biws.stickyparallax.css'
-                    ],
+                        'src/css/critical.css',
+                        'src/css/style.css',
+                        'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.css'
+                    ]
                 }
             }
         },
@@ -106,7 +108,7 @@ module.exports = grunt => {
                     'src/css/style.css',
                     'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.css'
                 ],
-                tasks: ['autoprefixer', 'cssmin'],
+                tasks: ['postcss'],
                 options: {
                     debounceDelay: 250,
                 }
@@ -167,7 +169,7 @@ module.exports = grunt => {
     grunt.loadNpmTasks('grunt-sync');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('@lodder/grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-string-replace');
@@ -175,6 +177,6 @@ module.exports = grunt => {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
 
-    grunt.registerTask('default', ['sync', 'babel', 'uglify', 'autoprefixer', 'cssmin', 'htmlmin', 'string-replace']);
+    grunt.registerTask('default', ['sync', 'babel', 'uglify', 'postcss', 'htmlmin', 'string-replace']);
     grunt.registerTask('serve', ['connect:livereload', 'watch']);
 }
