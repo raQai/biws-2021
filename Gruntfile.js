@@ -15,7 +15,7 @@ module.exports = grunt => {
                 files: {
                     'build/css/critical.css': 'src/css/critical.css',
                     'build/css/style.css': 'src/css/style.css',
-                    'build/css/biws.stickyparallax.css': 'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.1.css',
+                    'build/css/biws.stickyparallax.css': 'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.css',
                 }
             }
         },
@@ -39,7 +39,7 @@ module.exports = grunt => {
             dist: {
                 files: {
                     'build/js/index.js': 'src/js/index.js',
-                    'build/js/biws.stickyparallax.js': 'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.1.js',
+                    'build/js/biws.stickyparallax.js': 'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.js',
                 }
             }
         },
@@ -104,7 +104,7 @@ module.exports = grunt => {
                 files: [
                     'src/css/critical.css',
                     'src/css/style.css',
-                    'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.1.css'
+                    'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.css'
                 ],
                 tasks: ['autoprefixer', 'cssmin'],
                 options: {
@@ -114,7 +114,7 @@ module.exports = grunt => {
             scripts: {
                 files: [
                     'src/js/index.js',
-                    'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.1.js',
+                    'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.js',
                 ],
                 tasks: ['babel', 'uglify'],
                 options: {
