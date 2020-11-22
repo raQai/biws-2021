@@ -52,6 +52,7 @@ footer {
 .list {
     padding-inline-start: 20px;
     color: rgba(255, 255, 255, .9);
+    text-align: initial;
 }
 
 .imprint {
