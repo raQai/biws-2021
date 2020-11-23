@@ -23,7 +23,7 @@ module.exports = grunt => {
                 files: {
                     'build/css/critical.min.css': 'src/css/critical.css',
                     'build/css/style.min.css': 'src/css/style.css',
-                    'build/css/biws.stickyparallax.min.css': 'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.css',
+                    'build/css/biws.stickyparallax.min.css': 'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.1.css',
                 }
             }
         },
@@ -45,7 +45,7 @@ module.exports = grunt => {
             dist: {
                 files: {
                     'build/js/index.js': 'src/js/index.js',
-                    'build/js/biws.stickyparallax.js': 'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.js',
+                    'build/js/biws.stickyparallax.js': 'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.1.js',
                 }
             }
         },
@@ -109,7 +109,7 @@ module.exports = grunt => {
                 files: [
                     'src/css/critical.css',
                     'src/css/style.css',
-                    'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.css'
+                    'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.1.css'
                 ],
                 tasks: ['postcss', 'cssmin'],
                 options: {
@@ -119,7 +119,7 @@ module.exports = grunt => {
             scripts: {
                 files: [
                     'src/js/index.js',
-                    'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.2.js',
+                    'src/plugins/biws/stickyparallax/biws.stickyparallax-0.0.1.js',
                 ],
                 tasks: ['babel', 'uglify'],
                 options: {
